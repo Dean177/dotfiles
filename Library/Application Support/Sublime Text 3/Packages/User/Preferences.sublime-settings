@@ -1,0 +1,27 @@
+{
+	"added_words":
+	[
+		"Solarized",
+		"deanmerchant",
+		"gmail",
+		"https",
+		"",
+		"haskellstack",
+		"config",
+		"org",
+		"http",
+		"plugins"
+	],
+	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"font_size": 16,
+	"ignored_packages":
+	[
+		"TypeScript",
+		"TypescriptCompletion",
+		"Vintage"
+	],
+	"margin": 2,
+	"spell_check": true,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true
+}
