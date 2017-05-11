@@ -1,0 +1,7 @@
+[user]
+	name = Dean Merchant
+	email = deanmerchant@gmail.com
+[core]
+	autocrlf = input
+	editor = sublime -n -w
+	quotepath = false
