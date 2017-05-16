@@ -4,4 +4,5 @@
 :set +m
 :def clear \_ -> return ":!clear"
 :def hoogle \x -> return $ ":!hoogle \"" ++ x ++ "\""
+:def h \x -> return $ ":!hoogle \"" ++ x ++ "\""
 :! clear

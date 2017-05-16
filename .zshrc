@@ -1,8 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/deanmerchant/.oh-my-zsh
 export ANDROID_HOME=/usr/local/opt/android-sdk
-export EDITOR=webstorm
-export REACT_EDITOR=webstorm
+export EDITOR=idea
+export REACT_EDITOR=idea
 export PGDATA=/usr/local/var/postgres
 export CABALROOT=/Users/deanmerchant/.cabal
 export STACKROOT=/Users/deanmerchant/.local
@@ -67,8 +67,9 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+alias edit="sublime"
 alias fork="open -a Fork"
+alias npm="yarn"
 alias ohmyzsh="sublime ~/.oh-my-zsh"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias zshconfig="sublime ~/.zshrc"
-
