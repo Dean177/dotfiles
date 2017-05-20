@@ -1,6 +1,8 @@
 :set prompt "\ESC[33mλ > \ESC[m"
 :set prompt2 "\ESC[33mλ >> \ESC[m "
-:set +t -- print type after evaluation
+-- print type after evaluation
+:set +t 
+:set -XOverloadedStrings
+
 :def clear \_ -> return ":!clear"
 :def hoogle \x -> return $ ":!hoogle \"" ++ x ++ "\""
-:! clear
