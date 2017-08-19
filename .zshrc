@@ -1,4 +1,3 @@
-# Path to your oh-my-zsh installation.
 export ZSH=/Users/deanmerchant/.oh-my-zsh
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export EDITOR=idea
@@ -6,6 +5,7 @@ export REACT_EDITOR=idea
 export PGDATA=/usr/local/var/postgres
 export CABALROOT=/Users/deanmerchant/.cabal
 export STACKROOT=/Users/deanmerchant/.local
+export DOTNET_CLI_TELEMETRY_OPTOUT=1 # This disables the telemetry
 
 # Provide modules installed by yarn global add
 export PATH="$PATH:`yarn global bin`"
@@ -40,7 +40,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git heroku stack sublime yarn)
+plugins=(docker git heroku stack sublime yarn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -56,9 +56,6 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
@@ -67,12 +64,25 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+alias dnsmasq-edit="sublime /usr/local/etc/dnsmasq.conf"
+alias dnsmasq-restart="sudo launchctl stop homebrew.mxcl.dnsmasq && sudo launchctl start homebrew.mxcl.dnsmasq"
 alias edit="sublime"
 alias fork="open -a Fork"
-alias npm="yarn"
+alias edit-hosts="sudo sublime /etc/hosts"
+alias gradlew-init=""
+alias mvnw-init="curl -Ls https://github.com/shyiko/mvnw/releases/download/0.1.0/mvnw.tar.gz | tar xvz"
 alias ohmyzsh="sublime ~/.oh-my-zsh"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias stack-ide="ghcid --command=\"stack repl\""
 alias side="stack-ide"
 alias sghci="stack ghci"
 alias zshconfig="sublime ~/.zshrc"
+
+
+# Ensure docker machine is running and available: https://github.com/docker/toolbox/issues/453
+if [[ $(docker-machine status default) != "Running" ]]; then
+    echo "Starting up the default docker machine..."
+    docker-machine start default > /dev/null 2>&1
+fi
+
+eval $(docker-machine env default)

@@ -5,4 +5,5 @@
 :set -XOverloadedStrings
 
 :def clear \_ -> return ":!clear"
+:def test \_ -> return ":!stack test"
 :def hoogle \x -> return $ ":!hoogle \"" ++ x ++ "\""
