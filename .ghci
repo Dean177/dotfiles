@@ -1,7 +1,7 @@
 :set prompt "\ESC[33mλ > \ESC[m"
 :set prompt2 "\ESC[33mλ >> \ESC[m "
--- print type after evaluation
-:set +t 
+:set +s -- Display the time an evaluation takes
+:set +t -- print type after evaluation
 :set -XOverloadedStrings
 
 :def clear \_ -> return ":!clear"

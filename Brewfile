@@ -1,0 +1,8 @@
+tap "homebrew/core"
+tap "homebrew/bundle"
+tap "caskroom/cask"
+brew "ccat"
+brew "nvm"
+brew "yarn"
+brew "zsh"
+brew "zsh-completions"
